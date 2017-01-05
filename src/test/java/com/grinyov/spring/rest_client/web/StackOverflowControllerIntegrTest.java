@@ -33,7 +33,7 @@ import static org.hamcrest.Matchers.containsInAnyOrder;
 @WebIntegrationTest
 public class StackOverflowControllerIntegrTest {
 
-    RestTemplate restTemplate = new TestRestTemplate();
+    private RestTemplate restTemplate = new TestRestTemplate();
 
     @Autowired
     private MongoTemplate mongoTemplate;
