@@ -16,6 +16,7 @@ public class HealthCheckController {
 
     @RequestMapping("/check")
     public String checkStatus(){
+        healthService.clearNumberOfAttempts();
         return healthService.getHealth();
     }
 }
