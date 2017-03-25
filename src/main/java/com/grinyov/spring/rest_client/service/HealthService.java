@@ -23,7 +23,8 @@ public class HealthService {
     // annotation set value and period attempts
     @Retryable(maxAttempts = 10, value = RuntimeException.class, backoff = @Backoff(delay = 500, multiplier = 2))
     public String getHealth() {
-        return restTemplate.getForObject(healthCheckAddress, String.class) + " - " + attempt + "attempt(s)";
+        attempt++;
+        return restTemplate.getForObject(healthCheckAddress, String.class) + " - " + attempt + " attempt(s)";
     }
 
     @Recover
